@@ -17,3 +17,11 @@ tasks.withType<Jar> {
         attributes["Can-Retransform-Classes"] = true
     }
 }
+
+publishing {
+    publications {
+        create<MavenPublication>("agent") {
+            from(components["java"])
+        }
+    }
+}
